@@ -9,6 +9,8 @@ import MonetizationOnOutlinedIcon from '@mui/icons-material/MonetizationOnOutlin
 function Page() {
   const [products, setProducts] = useState([]);
   const [selectedProductId, setSelectedProductId] = useState(null);
+  const [oneProduct , setOneProduct] = useState([]);
+
   const router = useRouter();
  
   useEffect(() => {
@@ -29,11 +31,15 @@ function Page() {
   }, []);
   console.log(products);
 
+  // const handleProductClick = (productId) => {
+  //   setSelectedProductId(productId);
+  //   setOneProduct(`https://dummyjson.com/products/${productId}`)
+  // };
+
   const handleProductClick = (productId) => {
-    setSelectedProductId(productId);
     router.push(`/product/${productId}`);
   };
-
+  
   return (
     <Box sx={{ width: "100%" }}>
       <nav

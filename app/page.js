@@ -38,19 +38,37 @@ export default function Home() {
         >
           Creative power that goes beyond templates ....
         </Typography>
-        <Typography sx={{fontSize: "14px",
+        <Typography
+          sx={{
+            fontSize: "14px",
             color: "white",
             width: "30%",
             marginX: "auto",
-            my:1,
-            textAlign: "center",}}>
+            my: 1,
+            textAlign: "center",
+          }}
+        >
           You design, we generate the code — for everything from fully custom
           layouts to complex animations.
         </Typography>
-        <Box sx={{width:'300px', mx:'auto', mt:3}}>
-        <button style={{background:"#ff006e", color:'white', fontWeight:'bold', width:'230px' , display:'flex' , padding:'10px' , marginX:'auto' , textAlign:'center' , borderRadius:'4px' , justifyContent:'center'}}>GET STARTED —<Typography sx={{ml:'6px'}}>it's free</Typography></button>
+        <Box sx={{ width: "300px", mx: "auto", mt: 3 }}>
+          <button
+            style={{
+              background: "#ff006e",
+              color: "white",
+              fontWeight: "bold",
+              width: "230px",
+              display: "flex",
+              padding: "10px",
+              marginX: "auto",
+              textAlign: "center",
+              borderRadius: "4px",
+              justifyContent: "center",
+            }}
+          >
+            GET STARTED —<Typography sx={{ ml: "6px" }}>it's free</Typography>
+          </button>
         </Box>
-       
       </Box>
     </Box>
   );
