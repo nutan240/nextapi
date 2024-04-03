@@ -4,6 +4,9 @@ import { Box, Typography } from "@mui/material";
 import HomeIcon from "@mui/icons-material/Home";
 import MonetizationOnOutlinedIcon from '@mui/icons-material/MonetizationOnOutlined';
 import { useRouter } from 'next/navigation';
+import Banner from '../components/Banner';
+import { SliderData } from '../components/sliderData';
+import Slider from '../components/Slider'
 function page() {
   const router = useRouter();
   return (
@@ -28,6 +31,8 @@ function page() {
 
         </Typography>
       </nav>
+      <Banner  slides={SliderData}/>
+      <Slider/>
       </Box>
     </>
   )

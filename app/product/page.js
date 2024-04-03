@@ -1,18 +1,19 @@
 "use client";
-
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Box, Typography } from "@mui/material";
 import HomeIcon from "@mui/icons-material/Home";
 import MonetizationOnOutlinedIcon from '@mui/icons-material/MonetizationOnOutlined';
+import Link from "next/link";
+import { SliderData } from "../components/sliderData";
+import Banner from '../components/Banner';
 
-function Page() {
+
+function Page({ data }) {
   const [products, setProducts] = useState([]);
-  const [selectedProductId, setSelectedProductId] = useState(null);
-  const [oneProduct , setOneProduct] = useState([]);
-
   const router = useRouter();
- 
+  const data1 = { id: 123, name: 'example' };
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -29,25 +30,16 @@ function Page() {
 
     fetchData();
   }, []);
-  console.log(products);
 
-  // const handleProductClick = (productId) => {
-  //   setSelectedProductId(productId);
-  //   setOneProduct(`https://dummyjson.com/products/${productId}`)
-  // };
-
-  const handleProductClick = (productId) => {
-    router.push(`/product/${productId}`);
-  };
-  
   return (
-    <Box sx={{ width: "100%" }}>
+    <>
       <nav
         style={{
           background:
             "linear-gradient(to left, rgb(255, 0, 110), #fb0b4c9e, #ff006e4a, #b44593)",
           width: "100%",
           minWidth: "700px",
+          zIndex:'2000px'
         }}
         className=" text-white py-4 px-5 flex justify-between items-center"
       >
@@ -60,11 +52,19 @@ function Page() {
           <HomeIcon sx={{ fontSize: "35px" }} />
         </Typography>
       </nav>
+      
+      <Banner  slides={SliderData}/>
+    <Box sx={{ width: "100%" , position:'absolute' , top:'96%' , zIndex:66}}>
+
+    
+
+      <Box sx={{}}>
       <Box
         sx={{
-          background: "",
+          
           textDecoration: "underline",
           color: "rgb(37, 84, 112)",
+
         }}
       >
         <Typography
@@ -90,48 +90,57 @@ function Page() {
           flexWrap: "wrap",
           mx: "auto",
           justifyContent: "space-between",
+          alignItems:'flex-start'
         }}
       >
         {Array.isArray(products) &&
           products.map((product) => (
-            <Box sx={{ width: "450px" }} key={product.id}>
-              <Box
-                sx={{
-                  display: "flex",
-                  justifyContent: "center",
-                  alignContent: "center",
-                  mx: "auto",
-                  flexWrap: "wrap",
-                  height: "70%",
-                  overflow: "auto",
-                  backgroundPosition: "center",
-                }}
-              >
-                {product.images.length > 0 && (
-                  <img src={product.images[0]} alt={`Product 0`} />
-                )}
-              </Box>
-              <Box sx={{ mx: "auto", height: "350px" ,paddingBottom:'20px' }}>
-                <Typography sx={{ fontSize: "27px", textAlign: "center" }}>
-                  {product.brand}
-                </Typography>
-                <Typography
-                  sx={{ color: "gray", textAlign: "center", fontSize: "20px" ,height: "120px"  }}
-                  onClick={() => handleProductClick(product.id)}
+            <Link href={ { pathname:`/product/singleproduct?productId=${product.id}` , query:{id: product?.id}}} key={product.id}>
+              <Box sx={{ width: "450px" }} key={product.id}>
+              {/* <Link href={{ pathname: `/product/singleproduct?productId=${product.id}`, query: { data: JSON.stringify(data) } }}> */}
+                <Box
+                  sx={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignContent: "center",
+                    mx: "auto",
+                    flexWrap: "wrap",
+                    height: "80%",
+                    overflow: "auto",
+                    backgroundPosition: "center",
+                  }}
                 >
-                  Description: {product.description}
-                </Typography>
-                <Box sx={{display:'flex' ,justifyContent:'space-between' , marginTop:'10px'}}>
-                  <Typography sx={{background:'pink' , padding:'10px' , width:'200px',borderRadius:'4px' ,color:'white', fontWeight:'bold', textAlign:'center' ,fontSize:'20px'}}><MonetizationOnOutlinedIcon/> {product.price}</Typography>
-                  <Box>
-                  <button style={{background:"#ff006e", color:'white', fontWeight:'bold', width:'180px' , display:'flex' , padding:'10px' , marginX:'auto' , textAlign:'center' , borderRadius:'4px' , justifyContent:'center'}}>BUY NOW </button>
+                  {product.images.length > 0 && (
+                    <img  src={product.images[0]} alt={`Product 0`} height={'200px'} />
+                  )}
+                </Box>
+                <Box sx={{ mx: "auto", height: "270px", paddingBottom: '20px' }}>
+                  <Typography sx={{ fontSize: "27px", textAlign: "center" }}>
+                    {product.brand}
+                  </Typography>
+                  <Typography
+                    sx={{ color: "gray", textAlign: "center", fontSize: "20px", height: "120px" }}
+                  >
+                    Description: {product.description}
+                  </Typography>
+                  <Box sx={{ display: 'flex', justifyContent: 'space-between', marginTop: '10px' }}>
+                    <Typography sx={{ background: 'pink', padding: '10px', width: '200px', borderRadius: '4px', color: 'white', fontWeight: 'bold', textAlign: 'center', fontSize: '20px' }}>
+                      <MonetizationOnOutlinedIcon /> {product.price}
+                    </Typography>
+                    <Box>
+                      <button style={{ background: "#ff006e", color: 'white', fontWeight: 'bold', width: '180px', display: 'flex', padding: '10px', marginX: 'auto', textAlign: 'center', borderRadius: '4px', justifyContent: 'center' }}>BUY NOW </button>
+                    </Box>
                   </Box>
                 </Box>
               </Box>
-            </Box>
+            </Link>
           ))}
       </Box>
+</Box>
+   
     </Box>
+    
+    </>
   );
 }
 
