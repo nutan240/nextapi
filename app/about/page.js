@@ -1,14 +1,17 @@
 "use client"
 import React from 'react'
-import { Box, Typography } from "@mui/material";
-import HomeIcon from "@mui/icons-material/Home";
-import MonetizationOnOutlinedIcon from '@mui/icons-material/MonetizationOnOutlined';
+// import { Box, Typography } from "@mui/material";
+
 import { useRouter } from 'next/navigation';
 import Banner from '../components/Banner';
 import { SliderData } from '../components/sliderData';
 import Slider from '../components/Slider'
+import { Box, Typography } from '@mui/material';
+import RecipesSlider from '../components/RecipesSlider';
+import { RecipesData } from '../components/RecipesData';
 function page() {
   const router = useRouter();
+
   return (
     <>
     <Box>
@@ -31,8 +34,9 @@ function page() {
 
         </Typography>
       </nav>
-      <Banner  slides={SliderData}/>
-      <Slider/>
+      {/* <Banner  slides={RecipesData}/> */}
+      <RecipesSlider slides={RecipesData} />
+      <Slider slides={SliderData}/>
       </Box>
     </>
   )

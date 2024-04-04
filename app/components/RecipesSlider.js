@@ -4,7 +4,7 @@ import { SliderData } from './sliderData';
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
-const ImageSlider = ({ slides }) => {
+const RecipesSlider = ({ slides }) => {
   const [current, setCurrent] = useState(0);
 
   const nextSlide = () => {
@@ -45,4 +45,4 @@ const ImageSlider = ({ slides }) => {
   );
 };
 
-export default ImageSlider;
+export default RecipesSlider;

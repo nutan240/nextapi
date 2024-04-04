@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+
+*{
+  padding: 0px;
+  margin: 0px;
+}
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -239,18 +244,18 @@ body {
 
 .slider {
   position: relative;
-  top: 20px;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
+  width: 100vw;
+  height: 100vh; /* Make slider take full height of the screen */
+  overflow: hidden; /* Hide overflow to prevent scrollbar */
 }
 
 .image {
-  width: 99vw;
-  height: 600px;
+  width: 100%; /* Make image take full width of slider */
+  height: 100%; /* Make image take full height of slider */
+  object-fit: cover; /* Ensure image covers entire area */
+ 
   border-radius: 10px;
+  object-position: center; /* Center the image */
 }
 
 .right-arrow {
@@ -262,12 +267,13 @@ body {
   z-index: 10;
   cursor: pointer;
   user-select: none;
+  transform: translateY(-50%);
 }
 
 .left-arrow {
   position: absolute;
   top: 50%;
-  left: 32px;
+  left: 37px;
   font-size: 3rem;
   color: #7c7a7a;
   z-index: 10;
@@ -276,6 +282,9 @@ body {
 }
 
 .slide {
+  position: absolute;
+  left: 0;
+  top: 0;
   opacity: 0;
   transition-duration: 5s ease;
 }
@@ -283,15 +292,17 @@ body {
 .slide.active {
   opacity: 1;
   transition-duration: 5s;
-  transform: scale(1.08);
+  transform: scale(1.2);
+  /* display: flex; */
 }
 
 img{
   height: 300px;
-  transition-duration: 1s ease-in-ease-out;
+  transition-duration: 2s ease-in-ease-out;
   transform: scale(0.8);
 }
 img:hover  {
-  transition-duration: 1s ease-in-ease-out;
-  transform: scale(0.8);
+  /* transition-duration: 1s ease-in-ease-out; */
+  /* transform: scale(0.9); */
 }
+

@@ -54,7 +54,7 @@ function Page({ data }) {
       </nav>
       
       <Banner  slides={SliderData}/>
-    <Box sx={{ width: "100%" , position:'absolute' , top:'96%' , zIndex:66}}>
+    <Box sx={{ width: "100%" , zIndex:66}}>
 
     
 
@@ -97,7 +97,7 @@ function Page({ data }) {
           products.map((product) => (
             <Link href={ { pathname:`/product/singleproduct?productId=${product.id}` , query:{id: product?.id}}} key={product.id}>
               <Box sx={{ width: "450px" }} key={product.id}>
-              {/* <Link href={{ pathname: `/product/singleproduct?productId=${product.id}`, query: { data: JSON.stringify(data) } }}> */}
+             
                 <Box
                   sx={{
                     display: "flex",
