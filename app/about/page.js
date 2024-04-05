@@ -14,7 +14,7 @@ function page() {
 
   return (
     <>
-    <Box>
+    <Box  sx={{background:'#c6b8ab85'}}>
       <nav
         style={{
           background:

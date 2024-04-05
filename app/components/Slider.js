@@ -6,7 +6,7 @@ import { Box, Button, Card, Typography } from "@mui/material";
 import CardContent from "@mui/material/CardContent";
 const Carousel = ({ slides }) => {
   const [products, setProducts] = useState([]);
-  console.log(products , 'productsproducts')
+  console.log(products, "productsproducts");
   const settings = {
     dots: true,
     infinite: true,
@@ -14,19 +14,10 @@ const Carousel = ({ slides }) => {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 4000, 
-    pauseOnHover: true, 
+    autoplaySpeed: 3000,
+    pauseOnHover: true,
   };
-  const slidercard = {
-    dots: true,
-    infinite: true,
-    speed: 200,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 2000, 
-    pauseOnHover: true, 
-  };
+
 
   useEffect(() => {
     const fetchData = async () => {
@@ -36,9 +27,8 @@ const Carousel = ({ slides }) => {
           throw new Error("Failed to fetch data");
         }
         const data = await response.json();
-        
-        setProducts(data.recipes
-          );
+
+        setProducts(data.recipes);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -47,438 +37,220 @@ const Carousel = ({ slides }) => {
     fetchData();
   }, []);
 
-
   return (
-    <Slider {...settings}>
-      <div className="mt-[30px]">
-        <Box sx={{ display: "flex", justifyContent: "center", gap: 3 }}>
-          <Card sx={{ width: 326 }}>
-            <div>
-              <Typography
-                sx={{ background: "red", height: "200px", width: "100%" }}
-              ></Typography>
-              <Typography level="title-lg">Yosemite National Park</Typography>
-              <Typography level="body-sm">April 24 to May 02, 2021</Typography>
-            </div>
-
-            <CardContent orientation="horizontal">
-              <div>
-                <Typography level="body-xs">Total price:</Typography>
-                <Typography fontSize="lg" fontWeight="lg">
-                  $2,900
-                </Typography>
-              </div>
-              <Button
-                variant="solid"
-                size="md"
-                color="primary"
-                aria-label="Explore Bahamas Islands"
-                sx={{ ml: "auto", alignSelf: "center", fontWeight: 600 }}
-              >
-                Explore
-              </Button>
-            </CardContent>
-          </Card>
-          <Card sx={{ width: 326 }}>
-            <div>
-              <Typography
-                sx={{ background: "red", height: "200px", width: "100%" }}
-              ></Typography>
-              <Typography level="title-lg">Yosemite National Park</Typography>
-              <Typography level="body-sm">April 24 to May 02, 2021</Typography>
-            </div>
-
-            <CardContent orientation="horizontal">
-              <div>
-                <Typography level="body-xs">Total price:</Typography>
-                <Typography fontSize="lg" fontWeight="lg">
-                  $2,900
-                </Typography>
-              </div>
-              <Button
-                variant="solid"
-                size="md"
-                color="primary"
-                aria-label="Explore Bahamas Islands"
-                sx={{ ml: "auto", alignSelf: "center", fontWeight: 600 }}
-              >
-                Explore
-              </Button>
-            </CardContent>
-          </Card>{" "}
-          <Card sx={{ width: 326 }}>
-            <div>
-              <Typography
-                sx={{ background: "red", height: "200px", width: "100%" }}
-              ></Typography>
-              <Typography level="title-lg">Yosemite National Park</Typography>
-              <Typography level="body-sm">April 24 to May 02, 2021</Typography>
-            </div>
-
-            <CardContent orientation="horizontal">
-              <div>
-                <Typography level="body-xs">Total price:</Typography>
-                <Typography fontSize="lg" fontWeight="lg">
-                  $2,900
-                </Typography>
-              </div>
-              <Button
-                variant="solid"
-                size="md"
-                color="primary"
-                aria-label="Explore Bahamas Islands"
-                sx={{ ml: "auto", alignSelf: "center", fontWeight: 600 }}
-              >
-                Explore
-              </Button>
-            </CardContent>
-          </Card>{" "}
-          <Card sx={{ width: 326 }}>
-            <div>
-              <Typography
-                sx={{ background: "red", height: "200px", width: "100%" }}
-              ></Typography>
-              <Typography level="title-lg">Yosemite National Park</Typography>
-              <Typography level="body-sm">April 24 to May 02, 2021</Typography>
-            </div>
-
-            <CardContent orientation="horizontal">
-              <div>
-                <Typography level="body-xs">Total price:</Typography>
-                <Typography fontSize="lg" fontWeight="lg">
-                  $2,900
-                </Typography>
-              </div>
-              <Button
-                variant="solid"
-                size="md"
-                color="primary"
-                aria-label="Explore Bahamas Islands"
-                sx={{ ml: "auto", alignSelf: "center", fontWeight: 600 }}
-              >
-                Explore
-              </Button>
-            </CardContent>
-          </Card>
-        </Box>
-      </div>
-      <div>
-        <div className="mt-[30px]">
-          <Box sx={{ display: "flex", justifyContent: "center", gap: 3 }}>
-            <Card sx={{ width: 326 }}>
-              <div>
-                <Typography sx={{ height: "200px", width: "100%" }}>
-                  <Slider {...slidercard}>
-                    <div >
-                      <Box
-                        sx={{
-                          display: "flex",
-                          justifyContent: "center",
-                          gap: 3,
-                        }}
-                      >
-                        <Card sx={{ width: 326 }}>
-                          <div>
-                            <Typography
-                              sx={{
-                                background: "red",
-                                height: "200px",
-                                width: "100%",
-                              }}
-                            ></Typography>
-                            </div>
-                        </Card>
-                        
-                      </Box>
-                    </div>
-                    <div>
-                    <div >
-                      <Box
-                        sx={{
-                          display: "flex",
-                          justifyContent: "center",
-                          gap: 3,
-                        }}
-                      >
-                        <Card sx={{ width: 326 }}>
-                          <div>
-                            <Typography
-                              sx={{
-                                background: "green",
-                                height: "200px",
-                                width: "100%",
-                              }}
-                            ></Typography>
-                            </div>
-                        </Card>
-                        
-                      </Box>
-                    </div>
-                    </div>
-                    <div>
-                    <div >
-                      <Box
-                        sx={{
-                          display: "flex",
-                          justifyContent: "center",
-                          gap: 3,
-                        }}
-                      >
-                        <Card sx={{ width: 326 }}>
-                          <div>
-                            <Typography
-                              sx={{
-                                background: "blue",
-                                height: "200px",
-                                width: "100%",
-                              }}
-                            ></Typography>
-                            </div>
-                        </Card>
-                        
-                      </Box>
-                    </div>
-                    </div>
-                  </Slider>
-                </Typography>
-                <Typography level="title-lg">Yosemite National Park</Typography>
-                <Typography level="body-sm">
-                  April 24 to May 02, 2021
-                </Typography>
-              </div>
-
-              <CardContent orientation="horizontal">
-                <div>
-                  <Typography level="body-xs">Total price:</Typography>
-                  <Typography fontSize="lg" fontWeight="lg">
-                    $2,900
+    <>
+      <Slider {...settings}>
+        <div className="mt-[30px] bg-#c6b8ab85">
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              gap: 3,
+              paddingY: 3,
+              background: "#c6b8ab85",
+            }}
+          >
+            {products.slice(0, 5).map((product) => (
+              <Card sx={{ width: 326 }}>
+                <div className="text-center">
+                  <Typography sx={{display:'flex' , justifyContent:'center'}}>
+                    <img src={product.image} alt={products} />
+                  </Typography>
+                  <Typography
+                    sx={{ fontSize: "20px", fontWeight: "bold" }}
+                    level="title-lg text-center"
+                  >
+                    {product.name}
+                  </Typography>
+                  <Typography level="body-sm">
+                    rating :{product.rating}
                   </Typography>
                 </div>
-                <Button
-                  variant="solid"
-                  size="md"
-                  color="primary"
-                  aria-label="Explore Bahamas Islands"
-                  sx={{ ml: "auto", alignSelf: "center", fontWeight: 600 }}
-                >
-                  Explore
-                </Button>
-              </CardContent>
-            </Card>
-            <Card sx={{ width: 326 }}>
-              <div>
-                <Typography
-                  sx={{ background: "red", height: "200px", width: "100%" }}
-                ></Typography>
-                <Typography level="title-lg">Yosemite National Park</Typography>
-                <Typography level="body-sm">
-                  April 24 to May 02, 2021
-                </Typography>
-              </div>
 
-              <CardContent orientation="horizontal">
-                <div>
-                  <Typography level="body-xs">Total price:</Typography>
-                  <Typography fontSize="lg" fontWeight="lg">
-                    $2,900
-                  </Typography>
-                </div>
-                <Button
-                  variant="solid"
-                  size="md"
-                  color="primary"
-                  aria-label="Explore Bahamas Islands"
-                  sx={{ ml: "auto", alignSelf: "center", fontWeight: 600 }}
-                >
-                  Explore
-                </Button>
-              </CardContent>
-            </Card>{" "}
-            <Card sx={{ width: 326 }}>
-              <div>
-                <Typography
-                  sx={{ background: "red", height: "200px", width: "100%" }}
-                ></Typography>
-                <Typography level="title-lg">Yosemite National Park</Typography>
-                <Typography level="body-sm">
-                  April 24 to May 02, 2021
-                </Typography>
-              </div>
-
-              <CardContent orientation="horizontal">
-                <div>
-                  <Typography level="body-xs">Total price:</Typography>
-                  <Typography fontSize="lg" fontWeight="lg">
-                    $2,900
-                  </Typography>
-                </div>
-                <Button
-                  variant="solid"
-                  size="md"
-                  color="primary"
-                  aria-label="Explore Bahamas Islands"
-                  sx={{ ml: "auto", alignSelf: "center", fontWeight: 600 }}
-                >
-                  Explore
-                </Button>
-              </CardContent>
-            </Card>{" "}
-            <Card sx={{ width: 326 }}>
-              <div>
-                <Typography
-                  sx={{ background: "red", height: "200px", width: "100%" }}
-                ></Typography>
-                <Typography level="title-lg">Yosemite National Park</Typography>
-                <Typography level="body-sm">
-                  April 24 to May 02, 2021
-                </Typography>
-              </div>
-
-              <CardContent orientation="horizontal">
-                <div>
-                  <Typography level="body-xs">Total price:</Typography>
-                  <Typography fontSize="lg" fontWeight="lg">
-                    $2,900
-                  </Typography>
-                </div>
-                <Button
-                  variant="solid"
-                  size="md"
-                  color="primary"
-                  aria-label="Explore Bahamas Islands"
-                  sx={{ ml: "auto", alignSelf: "center", fontWeight: 600 }}
-                >
-                  Explore
-                </Button>
-              </CardContent>
-            </Card>
+                <CardContent orientation="horizontal">
+                  <div className="flex gap-5">
+                    <Typography level="body-xs">Total price:</Typography>
+                    <Typography fontSize="lg" fontWeight="lg">
+                      $2,900
+                    </Typography>
+                  </div>
+                  <Box sx={{ display: "flex" }}>
+                    <Button>order now</Button>
+                    <Button
+                      variant="solid"
+                      size="md"
+                      color="primary"
+                      aria-label="Explore Bahamas Islands"
+                      sx={{ ml: "auto", alignSelf: "center", fontWeight: 600 }}
+                    >
+                      Explore
+                    </Button>
+                  </Box>
+                </CardContent>
+              </Card>
+            ))}
           </Box>
         </div>
-      </div>
-      <div>
-        <div className="mt-[30px]">
-          <Box sx={{ display: "flex", justifyContent: "center", gap: 3 }}>
-            <Card sx={{ width: 326 }}>
-              <div>
-                <Typography
-                  sx={{ background: "red", height: "200px", width: "100%" }}
-                ></Typography>
-                <Typography level="title-lg">Yosemite National Park</Typography>
-                <Typography level="body-sm">
-                  April 24 to May 02, 2021
-                </Typography>
-              </div>
+        <div className="text-center">
+          <div className="mt-[30px]">
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                gap: 3,
+                paddingY: 3,
+                background: "#c6b8ab85",
+              }}
+            >
+              {products.slice(5, 9).map((product) => (
+                <Card sx={{ width: 326 }}>
+                  <div>
+                    <Typography sx={{display:'flex' , justifyContent:'center'}}>
+                      <img src={product.image} alt={products} />
+                    </Typography>
+                    <Typography
+                      sx={{ fontSize: "20px", fontWeight: "bold" }}
+                      level="title-lg text-center"
+                    >
+                      {product.name}
+                    </Typography>
+                    <Typography level="body-sm">
+                      rating :{product.rating}
+                    </Typography>
+                  </div>
 
-              <CardContent orientation="horizontal">
-                <div>
-                  <Typography level="body-xs">Total price:</Typography>
-                  <Typography fontSize="lg" fontWeight="lg">
-                    $2,900
+                  <CardContent orientation="horizontal">
+                    <div className="flex gap-5">
+                      <Typography level="body-xs">Total price:</Typography>
+                      <Typography fontSize="lg" fontWeight="lg">
+                        $2,900
+                      </Typography>
+                    </div>
+                    <Box sx={{ display: "flex" }}>
+                      <Button>order now</Button>
+                      <Button
+                        variant="solid"
+                        size="md"
+                        color="primary"
+                        aria-label="Explore Bahamas Islands"
+                        sx={{
+                          ml: "auto",
+                          alignSelf: "center",
+                          fontWeight: 600,
+                        }}
+                      >
+                        Explore
+                      </Button>
+                    </Box>
+                  </CardContent>
+                </Card>
+              ))}
+            </Box>
+          </div>
+        </div>
+        <div>
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              gap: 3,
+              background: "#c6b8ab85",
+              paddingY: 3,
+            }}
+          >
+            {products.slice(11, 16).map((product) => (
+              <Card sx={{ width: 326 }}>
+                <div className="text-center">
+                  <Typography sx={{display:'flex' , justifyContent:'center'}}>
+                    <img src={product.image} alt={products} />
+                  </Typography>
+                  <Typography
+                    sx={{ fontSize: "20px", fontWeight: "bold" }}
+                    level="title-lg text-center"
+                  >
+                    {product.name}
+                  </Typography>
+                  <Typography level="body-sm">
+                    rating :{product.rating}
                   </Typography>
                 </div>
-                <Button
-                  variant="solid"
-                  size="md"
-                  color="primary"
-                  aria-label="Explore Bahamas Islands"
-                  sx={{ ml: "auto", alignSelf: "center", fontWeight: 600 }}
-                >
-                  Explore
-                </Button>
-              </CardContent>
-            </Card>
-            <Card sx={{ width: 326 }}>
-              <div>
-                <Typography
-                  sx={{ background: "red", height: "200px", width: "100%" }}
-                ></Typography>
-                <Typography level="title-lg">Yosemite National Park</Typography>
-                <Typography level="body-sm">
-                  April 24 to May 02, 2021
-                </Typography>
-              </div>
 
-              <CardContent orientation="horizontal">
-                <div>
-                  <Typography level="body-xs">Total price:</Typography>
-                  <Typography fontSize="lg" fontWeight="lg">
-                    $2,900
-                  </Typography>
-                </div>
-                <Button
-                  variant="solid"
-                  size="md"
-                  color="primary"
-                  aria-label="Explore Bahamas Islands"
-                  sx={{ ml: "auto", alignSelf: "center", fontWeight: 600 }}
-                >
-                  Explore
-                </Button>
-              </CardContent>
-            </Card>{" "}
-            <Card sx={{ width: 326 }}>
-              <div>
-                <Typography
-                  sx={{ background: "red", height: "200px", width: "100%" }}
-                ></Typography>
-                <Typography level="title-lg">Yosemite National Park</Typography>
-                <Typography level="body-sm">
-                  April 24 to May 02, 2021
-                </Typography>
-              </div>
-
-              <CardContent orientation="horizontal">
-                <div>
-                  <Typography level="body-xs">Total price:</Typography>
-                  <Typography fontSize="lg" fontWeight="lg">
-                    $2,900
-                  </Typography>
-                </div>
-                <Button
-                  variant="solid"
-                  size="md"
-                  color="primary"
-                  aria-label="Explore Bahamas Islands"
-                  sx={{ ml: "auto", alignSelf: "center", fontWeight: 600 }}
-                >
-                  Explore
-                </Button>
-              </CardContent>
-            </Card>{" "}
-            <Card sx={{ width: 326 }}>
-              <div>
-                <Typography
-                  sx={{ background: "red", height: "200px", width: "100%" }}
-                ></Typography>
-                <Typography level="title-lg">Yosemite National Park</Typography>
-                <Typography level="body-sm">
-                  April 24 to May 02, 2021
-                </Typography>
-              </div>
-
-              <CardContent orientation="horizontal">
-                <div>
-                  <Typography level="body-xs">Total price:</Typography>
-                  <Typography fontSize="lg" fontWeight="lg">
-                    $2,900
-                  </Typography>
-                </div>
-                <Button
-                  variant="solid"
-                  size="md"
-                  color="primary"
-                  aria-label="Explore Bahamas Islands"
-                  sx={{ ml: "auto", alignSelf: "center", fontWeight: 600 }}
-                >
-                  Explore
-                </Button>
-              </CardContent>
-            </Card>
+                <CardContent orientation="horizontal">
+                  <div className="flex gap-5">
+                    <Typography level="body-xs">Total price:</Typography>
+                    <Typography fontSize="lg" fontWeight="lg">
+                      $2,900
+                    </Typography>
+                  </div>
+                  <Box sx={{ display: "flex" }}>
+                    <Button>order now</Button>
+                    <Button
+                      variant="solid"
+                      size="md"
+                      color="primary"
+                      aria-label="Explore Bahamas Islands"
+                      sx={{ ml: "auto", alignSelf: "center", fontWeight: 600 }}
+                    >
+                      Explore
+                    </Button>
+                  </Box>
+                </CardContent>
+              </Card>
+            ))}
           </Box>
         </div>
-      </div>
-      {/* Add more slides here */}
-    </Slider>
+      </Slider>
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          gap: 3,
+          flexWrap: "wrap",
+          mt: 4,
+          borderTop: "1px solid gray",
+          background: "#9a816a8f",
+          pt: 3,
+        }}
+      >
+        {products.map((product) => (
+          <Card sx={{ width: 326 }}>
+            <div className="text-center">
+              <Typography sx={{display:'flex' , justifyContent:'center'}}>
+                <img src={product.image} alt={products} />
+              </Typography>
+              <Typography
+                sx={{ fontSize: "20px", fontWeight: "bold" }}
+                level="title-lg text-center"
+              >
+                {product.name}
+              </Typography>
+              <Typography level="body-sm">rating :{product.rating}</Typography>
+            </div>
+
+            <CardContent orientation="horizontal">
+              <div className="flex gap-6">
+                <Typography level="body-xs">Total price:</Typography>
+                <Typography fontSize="lg" fontWeight="lg">
+                  $2,900
+                </Typography>
+              </div>
+              <Box sx={{ display: "flex" }}>
+                <Button>order now</Button>
+                <Button
+                  variant="solid"
+                  size="md"
+                  color="primary"
+                  aria-label="Explore Bahamas Islands"
+                  sx={{ ml: "auto", alignSelf: "center", fontWeight: 600 }}
+                >
+                  Explore
+                </Button>
+              </Box>
+            </CardContent>
+          </Card>
+        ))}
+      </Box>
+    </>
   );
 };
 
