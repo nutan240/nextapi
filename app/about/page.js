@@ -9,6 +9,7 @@ import Slider from '../components/Slider'
 import { Box, Typography } from '@mui/material';
 import RecipesSlider from '../components/RecipesSlider';
 import { RecipesData } from '../components/RecipesData';
+import Footer from '../components/Footer';
 function page() {
   const router = useRouter();
 
@@ -37,6 +38,7 @@ function page() {
       {/* <Banner  slides={RecipesData}/> */}
       <RecipesSlider slides={RecipesData} />
       <Slider slides={SliderData}/>
+      <Footer/>
       </Box>
     </>
   )

@@ -50,7 +50,7 @@ const Carousel = ({ slides }) => {
               background: "#c6b8ab85",
             }}
           >
-            {products.slice(0, 5).map((product) => (
+            {products.slice(0, 4).map((product) => (
               <Card sx={{ width: 326 }}>
                 <div className="text-center">
                   <Typography sx={{display:'flex' , justifyContent:'center'}}>
@@ -68,25 +68,27 @@ const Carousel = ({ slides }) => {
                 </div>
 
                 <CardContent orientation="horizontal">
-                  <div className="flex gap-5">
-                    <Typography level="body-xs">Total price:</Typography>
-                    <Typography fontSize="lg" fontWeight="lg">
-                      $2,900
-                    </Typography>
-                  </div>
-                  <Box sx={{ display: "flex" }}>
-                    <Button>order now</Button>
-                    <Button
-                      variant="solid"
-                      size="md"
-                      color="primary"
-                      aria-label="Explore Bahamas Islands"
-                      sx={{ ml: "auto", alignSelf: "center", fontWeight: 600 }}
-                    >
-                      Explore
-                    </Button>
-                  </Box>
-                </CardContent>
+              <div className="flex gap-[110px] ml-3 ">
+                <Typography sx={{fontStyle:'italic' , fontSize:'20px'}}  level="body-xs">Total price:</Typography>
+                <Typography fontSize="lg" fontWeight="lg">
+                  $2,900
+                </Typography>
+              </div>
+              <Box sx={{ display: "flex" }}>
+                <Button sx={{
+                  color:'green', backgroundColor:'orange' ,fontWeight:'bold' }} >order now</Button>
+                <Button
+                  variant="solid"
+                  size="md"
+                  color="primary"
+                  aria-label="Explore Bahamas Islands"
+                  sx={{ ml: "auto", alignSelf: "center", fontWeight: 600 ,
+                   }}
+                >
+                  Explore
+                </Button>
+              </Box>
+            </CardContent>
               </Card>
             ))}
           </Box>
@@ -120,29 +122,27 @@ const Carousel = ({ slides }) => {
                   </div>
 
                   <CardContent orientation="horizontal">
-                    <div className="flex gap-5">
-                      <Typography level="body-xs">Total price:</Typography>
-                      <Typography fontSize="lg" fontWeight="lg">
-                        $2,900
-                      </Typography>
-                    </div>
-                    <Box sx={{ display: "flex" }}>
-                      <Button>order now</Button>
-                      <Button
-                        variant="solid"
-                        size="md"
-                        color="primary"
-                        aria-label="Explore Bahamas Islands"
-                        sx={{
-                          ml: "auto",
-                          alignSelf: "center",
-                          fontWeight: 600,
-                        }}
-                      >
-                        Explore
-                      </Button>
-                    </Box>
-                  </CardContent>
+              <div className="flex gap-[110px] ml-3 ">
+                <Typography sx={{fontStyle:'italic' , fontSize:'20px'}}  level="body-xs">Total price:</Typography>
+                <Typography fontSize="lg" fontWeight="lg">
+                  $2,900
+                </Typography>
+              </div>
+              <Box sx={{ display: "flex" }}>
+                <Button sx={{
+                  color:'green', backgroundColor:'orange' ,fontWeight:'bold' }} >order now</Button>
+                <Button
+                  variant="solid"
+                  size="md"
+                  color="primary"
+                  aria-label="Explore Bahamas Islands"
+                  sx={{ ml: "auto", alignSelf: "center", fontWeight: 600 ,
+                   }}
+                >
+                  Explore
+                </Button>
+              </Box>
+            </CardContent>
                 </Card>
               ))}
             </Box>
@@ -154,11 +154,11 @@ const Carousel = ({ slides }) => {
               display: "flex",
               justifyContent: "center",
               gap: 3,
-              background: "#c6b8ab85",
+              // background: "#c",
               paddingY: 3,
             }}
           >
-            {products.slice(11, 16).map((product) => (
+            {products.slice(11, 15).map((product) => (
               <Card sx={{ width: 326 }}>
                 <div className="text-center">
                   <Typography sx={{display:'flex' , justifyContent:'center'}}>
@@ -176,25 +176,27 @@ const Carousel = ({ slides }) => {
                 </div>
 
                 <CardContent orientation="horizontal">
-                  <div className="flex gap-5">
-                    <Typography level="body-xs">Total price:</Typography>
-                    <Typography fontSize="lg" fontWeight="lg">
-                      $2,900
-                    </Typography>
-                  </div>
-                  <Box sx={{ display: "flex" }}>
-                    <Button>order now</Button>
-                    <Button
-                      variant="solid"
-                      size="md"
-                      color="primary"
-                      aria-label="Explore Bahamas Islands"
-                      sx={{ ml: "auto", alignSelf: "center", fontWeight: 600 }}
-                    >
-                      Explore
-                    </Button>
-                  </Box>
-                </CardContent>
+              <div className="flex gap-[110px] ml-3 ">
+                <Typography sx={{fontStyle:'italic' , fontSize:'20px'}}  level="body-xs">Total price:</Typography>
+                <Typography fontSize="lg" fontWeight="lg">
+                  $2,900
+                </Typography>
+              </div>
+              <Box sx={{ display: "flex" }}>
+                <Button sx={{
+                  color:'green', backgroundColor:'orange' ,fontWeight:'bold' }} >order now</Button>
+                <Button
+                  variant="solid"
+                  size="md"
+                  color="primary"
+                  aria-label="Explore Bahamas Islands"
+                  sx={{ ml: "auto", alignSelf: "center", fontWeight: 600 ,
+                   }}
+                >
+                  Explore
+                </Button>
+              </Box>
+            </CardContent>
               </Card>
             ))}
           </Box>
@@ -208,7 +210,7 @@ const Carousel = ({ slides }) => {
           flexWrap: "wrap",
           mt: 4,
           borderTop: "1px solid gray",
-          background: "#9a816a8f",
+          // background: "#9a816a8f",
           pt: 3,
         }}
       >
@@ -224,24 +226,26 @@ const Carousel = ({ slides }) => {
               >
                 {product.name}
               </Typography>
-              <Typography level="body-sm">rating :{product.rating}</Typography>
+              <Typography level="body-sm">Rating :{product.rating}</Typography>
             </div>
 
             <CardContent orientation="horizontal">
-              <div className="flex gap-6">
-                <Typography level="body-xs">Total price:</Typography>
+              <div className="flex gap-[110px] ml-3 ">
+                <Typography sx={{fontStyle:'italic' , fontSize:'20px'}}  level="body-xs">Total price:</Typography>
                 <Typography fontSize="lg" fontWeight="lg">
                   $2,900
                 </Typography>
               </div>
               <Box sx={{ display: "flex" }}>
-                <Button>order now</Button>
+                <Button sx={{
+                  color:'green', backgroundColor:'orange' ,fontWeight:'bold' }} >order now</Button>
                 <Button
                   variant="solid"
                   size="md"
                   color="primary"
                   aria-label="Explore Bahamas Islands"
-                  sx={{ ml: "auto", alignSelf: "center", fontWeight: 600 }}
+                  sx={{ ml: "auto", alignSelf: "center", fontWeight: 600 ,
+                   }}
                 >
                   Explore
                 </Button>
