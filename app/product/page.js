@@ -47,7 +47,7 @@ function Page({ data }) {
         <Typography
           sx={{ fontWeight: "bold" }}
           className="cursor-pointer"
-          onClick={() => router.push("/")}
+          onClick={() => router.push("home")}
         >
           <HomeIcon sx={{ fontSize: "35px" }} />
         </Typography>
