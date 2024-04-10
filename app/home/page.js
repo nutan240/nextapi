@@ -16,6 +16,7 @@ export default function Home() {
         flexDirection: "column",
       }}
     >
+    <Typography sx={{fontSize:'20px' , color:'white' ,  width:'95%' , textAlign:'end'}} onClick={()=>router.push('/')} > Logout</Typography>
       <Navbar />
       <Box>
         <Typography
