@@ -29,13 +29,13 @@ function page() {
         <Typography
           sx={{ fontWeight: "bold" }}
           className="cursor-pointer"
-          onClick={() => router.push("/")}
+          onClick={() => router.push("/home")}
         >
-        <Typography>ABOUT</Typography>
+        About
 
         </Typography>
       </nav>
-      {/* <Banner  slides={RecipesData}/> */}
+      
       <RecipesSlider slides={RecipesData} />
       <Slider slides={SliderData}/>
       <Footer/>

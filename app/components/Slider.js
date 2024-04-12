@@ -4,6 +4,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Box, Button, Card, Typography } from "@mui/material";
 import CardContent from "@mui/material/CardContent";
+import Link from "next/link";
+
 const Carousel = ({ slides }) => {
   const [products, setProducts] = useState([]);
   console.log(products, "productsproducts");
@@ -216,6 +218,7 @@ const Carousel = ({ slides }) => {
       >
         {products.map((product) => (
           <Card sx={{ width: 326 }}>
+          <Link href={`/singlefood?id=${product.id}`}>
             <div className="text-center">
               <Typography sx={{display:'flex' , justifyContent:'center'}}>
                 <img src={product.image} alt={products} />
@@ -251,7 +254,10 @@ const Carousel = ({ slides }) => {
                 </Button>
               </Box>
             </CardContent>
+          </Link>
+
           </Card>
+        
         ))}
       </Box>
     </>

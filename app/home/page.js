@@ -3,10 +3,12 @@ import { useRouter } from "next/navigation";
 
 import { Box, Button, Typography } from "@mui/material";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 export default function Home() {
   const router = useRouter();
   return (
+    <>
     <Box
       sx={{
         backgroundImage: `url('/nav.jpeg')`,
@@ -75,7 +77,10 @@ export default function Home() {
             GET STARTED —<Typography sx={{ ml: "6px" }}>it's free</Typography>
           </button>
         </Box>
+       
       </Box>
     </Box>
+    <Footer/>
+    </>
   );
 }

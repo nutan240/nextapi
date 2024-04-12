@@ -13,6 +13,7 @@ function Page({ data }) {
   const [products, setProducts] = useState([]);
   const router = useRouter();
   const data1 = { id: 123, name: "example" };
+  const navigate = useRouter();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -30,6 +31,7 @@ function Page({ data }) {
 
     fetchData();
   }, []);
+
 
   return (
     <>
@@ -90,13 +92,9 @@ function Page({ data }) {
           >
             {Array.isArray(products) &&
               products.map((product) => (
-                <Link
-                  href={{
-                    pathname: `/product/singleproduct?productId=${product.id}`,
-                    query: { id: product?.id },
-                  }}
-                  key={product.id}
-                >
+                <Link href={`/singleproduct?id=${product.id}`}>
+                <Box>
+               
                   <Box sx={{ width: "450px" }} key={product.id}>
                     <Box
                       sx={{
@@ -182,7 +180,8 @@ function Page({ data }) {
                       </Box>
                     </Box>
                   </Box>
-                </Link>
+             </Box>
+             </Link>
               ))}
           </Box>
         </Box>
