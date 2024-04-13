@@ -1,19 +1,25 @@
-import Navbar from "./components/Navbar";
-import { Box } from "@mui/material";
+"use client"
+import { useRouter } from "next/navigation";
+
+import { Box, Button, Typography } from "@mui/material";
+import Loginpage from "./api/Loginpage";
 
 export default function Home() {
+  const router = useRouter();
   return (
     <Box
       sx={{
-        backgroundImage: `url('/nav.jpeg')`,
+       
         backgroundSize: "cover",
         minHeight: "100vh",
         display: "flex",
         flexDirection: "column",
-        
+        background:'#9b9bed',
+        width:'100%'
       }}
     >
-      <Navbar />
+    <Loginpage/>
+      
     </Box>
   );
 }
